@@ -1,0 +1,14 @@
+$green: #38f2c8;
+$black: #323736;
+$blue: #38d3f2;
+$white: #f4f4f4;
+
+
+@mixin btn {
+    padding: 1rem 2rem;
+    border-radius: 15px;
+    background: linear-gradient(90deg, $blue, $green);
+    color: $black;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
