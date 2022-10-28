@@ -1,14 +1,14 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
+  "description": "a Restful API for the scordi app",
   "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.ts"
   },
   "keywords": [],
-  "author": "",
+  "author": "Leo Philip, Loïc Bozon, Yohann Tonnerre, Mickael Brunet",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.1",
@@ -20,7 +20,7 @@
     "ts-node": "^10.9.1"
   },
   "engines": {
-    "node": "16.x"
+    "node": "16.17.1"
   },
   "devDependencies": {
     "typescript": "^4.8.4"
