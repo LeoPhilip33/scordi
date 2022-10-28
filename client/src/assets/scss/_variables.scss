@@ -1,14 +1,31 @@
 $green: #38f2c8;
 $black: #323736;
+$darkgrey: #444847;
+$lightgrey: #575B5A;
 $blue: #38d3f2;
 $white: #f4f4f4;
 
 
-@mixin btn {
+@mixin h1{
+    font-size: 4.8rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+@mixin input-button {
+    border: solid $blue 2px;
+    border-radius: 6px;
+    padding: 1rem 2rem;
+    background-color: $black;
+    color: $white;
+}
+
+
+/*@mixin btn {
     padding: 1rem 2rem;
     border-radius: 15px;
     background: linear-gradient(90deg, $blue, $green);
     color: $black;
     font-size: 1.5rem;
     font-weight: 700;
-}
+}*/
