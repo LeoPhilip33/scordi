@@ -1,43 +1,49 @@
-import { DataTypes } from "sequelize";
-import sequelize from "../index";
+import { DataTypes, Model, Optional } from "sequelize";
+import { sequelize } from ".";
 
-const User = sequelize.define('Users', {
+interface UserAttributes {
+    id: number
+    email: string
+    password: string
+    pseudo: string
+    avatar: string
+    birth_date: number
+    custom_Id: number
+}
+
+interface UserCreationAttributes extends Optional<UserAttributes, 'avatar'> {}
+
+interface UserInstance extends Model<UserAttributes, UserCreationAttributes>,
+    UserAttributes {
+        createdAt? : Date;
+        updatedAt: Date;
+    }
+
+const User = sequelize.define<UserInstance>('Users', {
     id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
-        primaryKey: true        
+        primaryKey: true 
     },
-    email : {
+    email: {
         type: DataTypes.STRING
     },
-    password : {
+    password: {
         type: DataTypes.STRING
     },
-    pseudo : {
+    pseudo: {
         type: DataTypes.STRING
     },
     avatar : {
         type: DataTypes.STRING,
         allowNull: true
     },
-    birth_ate : {
+    birth_date: {
         type: DataTypes.INTEGER
     },
-    customId: {
+    custom_Id: {
         type : DataTypes.INTEGER
-    },
-    // field created_at and updated_at are utomaticaly created for tables 
-    // created_at: {
-    //     type: DataTypes.DATE
-    // },
-    // updated_at: {
-    //     type: DataTypes.DATE
-    // }
-});
-
-(async () => {
-    await sequelize.sync({force: true})
-})()
+    }
+})
 
 export default User
-
