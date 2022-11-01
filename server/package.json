@@ -5,7 +5,9 @@
   "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.ts"
+    "start": "nodemon index.ts",
+    "database:start" : "docker compose -f docker-compose.yml up -d",
+    "database:migrate" : "sequelize db:migrate --migrations-path ./database/migrations/compiled"
   },
   "keywords": [],
   "author": "Leo Philip, Loïc Bozon, Yohann Tonnerre, Mickael Brunet",
@@ -17,6 +19,7 @@
     "mysql2": "^2.3.3",
     "nodemon": "^2.0.20",
     "sequelize": "^6.25.3",
+    "sequelize-cli": "^6.5.2",
     "ts-node": "^10.9.1"
   },
   "engines": {
