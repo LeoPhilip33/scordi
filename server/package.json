@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.ts",
     "database:start" : "docker compose -f docker-compose.yml up -d",
+    "database:stop" : "docker compose stop",
     "database:migrate" : "sequelize db:migrate --migrations-path ./database/migrations/compiled"
   },
   "keywords": [],

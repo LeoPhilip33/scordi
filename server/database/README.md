@@ -25,8 +25,8 @@ In order to create a model (a single Table) you need to create a file with the f
 In order to create a migration, you need to create a file with the following naming : [date]-[actions]-[name_of_the_model].ts
 
 the actions available are :
-- **create-[name_of_the_model]** : create the table
-- **add-[name_of_the_column]** : add a column to a table
+- **create-[name_of_the_model]** : create the table.
+- **add-[name_of_the_column]** : add a column to a table.
 
 then, you need to compile the migration to perform the action directly to the database. <br>
 `tsc ./database/migrations/20221031131306-create-Users.ts --outDir ./database/migrations/compiled`
