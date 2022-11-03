@@ -2,6 +2,9 @@ import { createRouter, createWebHistory, RouteRecordRaw, RouterOptions } from "v
 
 import Home from '../pages/Home.vue'
 import NotHome from '../pages/NotHome.vue'
+import Login from '../pages/auth/Login.vue'
+import Register from '../pages/auth/Register.vue'
+import Auth from '../pages/auth/Auth.vue'
 const routes: Array<RouteRecordRaw> = [
     {
         path: '/',
@@ -12,6 +15,23 @@ const routes: Array<RouteRecordRaw> = [
         path: '/not-home',
         name: 'NotHome',
         component: NotHome
+    },
+    {
+        path: '/auth',
+        name: 'Auth',
+        component: Auth,
+        children: [
+            {
+                path: '',
+                name: 'Login',
+                component: Login,
+            },
+            {
+                path: 'register',
+                name: 'Register',
+                component: Register,
+            },
+        ]
     },
 ]
 

@@ -1,19 +1,16 @@
-<script setup lang="ts">
+<script setup lang="ts" >
+
+
 
 </script>
 
 <template>
-	<section class="app-container">
-		<router-view v-slot="{ Component }">
+    <section class="auth-wrapper">
+		<img class="auth-bg" src="/img/auth-bg.svg" alt="">
+        <router-view v-slot="{ Component }">
 			<transition name="route" mode="out-in">
 				<component class="main-component" :is="Component"></component>
 			</transition>
 		</router-view>
-	</section>
+    </section>
 </template>
-
-<style lang="scss">
-@import './assets/scss/style.scss';
-</style>
-
-
