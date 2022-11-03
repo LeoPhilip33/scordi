@@ -1,5 +1,6 @@
 <script setup lang="ts" >
 import { reactive,ref } from 'vue';
+import ErrorComponent from './ErrorComponent.vue';
 
 const form = reactive({
     email: '',
@@ -43,10 +44,8 @@ const checkError = (value:string) => {
                 <label for="">Mot de passe</label>
                 <input :class="checkError('password')"  v-model="form.password" type="password" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;"/>
             </div>
-
-            <p class="error" v-if="!isFormValid">
-                Vous avez saisis un mot de passe ou email incorrect
-            </p>
+          
+            <ErrorComponent :isError="!isFormValid" />
 
             <button>Connexion</button>
         </form>
