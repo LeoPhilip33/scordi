@@ -9,10 +9,11 @@ const form = reactive({
     checkbox: false
 })
 const isFormValid = ref<boolean>(true)
-const errors: string[] = reactive([])
+let errors: string[] = reactive([])
 
 const submit = async () => {
-    console.log(form)
+    isFormValid.value = true
+    errors = []
     for (let [key, value] of Object.entries(form)) {
         if(!value){
             isFormValid.value = false
@@ -26,9 +27,6 @@ const checkError = (value:string) => {
     return isInvalid ? 'form-error' : ''
 }
 
-const removeError = (value:string) => {
-    errors.filter(e !=)
-}
 
 </script>
 
@@ -39,7 +37,7 @@ const removeError = (value:string) => {
         <form @submit.prevent="submit">
             <div class="auth-input-container">
                 <label for="">E-mail</label>
-                <input @change="removeError('email')" :class="checkError('email')"  v-model="form.email" type="email" placeholder="exemple@exemple.com"/>
+                <input :class="checkError('email')"  v-model="form.email" type="email" placeholder="exemple@exemple.com"/>
             </div>
             <div class="auth-input-container">
                 <label for="">Nom d'utilisateur</label>
