@@ -1,0 +1,34 @@
+header {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    background-color: $darkgrey;
+
+    .logo-container {
+        height: 50%;
+
+        &.router-link-exact-active {
+            img {
+                filter: brightness(0) invert(1);
+            }
+        }
+
+        img {
+            height: 100%;
+            transition: .2s;
+
+
+        }
+    }
+
+    hr {
+        margin-left: 2rem;
+        border: none;
+        border-left: 1px solid $lightgrey;
+        height: 80%;
+        width: 1px;
+    }
+
+    @import './channel.scss';
+}

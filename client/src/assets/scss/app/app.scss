@@ -1,0 +1,10 @@
+.app-container {
+    width: 100%;
+    height: 100vh;
+    background-color: $darkgrey;
+    position: relative;
+}
+
+
+@import './header.scss';
+@import './friend.scss';

@@ -1,4 +1,4 @@
-<script lang="ts" ></script>
+<script setup lang="ts"></script>
 <template>
     <section class="homepage">
         <h1>Homepage</h1>

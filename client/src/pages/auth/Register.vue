@@ -52,8 +52,8 @@ const checkError = (value: string) => {
             </div>
             <div class="auth-input-container">
                 <label for="">Date de naissance</label>
-                <input :class="checkError('birth_date')" v-model="form.birth_date" type="date" id="start" name="day"
-                    min="1950-01-01" max="">
+                <input class="date-input" :class="checkError('birth_date')" v-model="form.birth_date" type="date"
+                    id="start" name="day" min="1950-01-01" max="">
             </div>
             <div class="auth-input-container">
                 <label class="container checkbox">
